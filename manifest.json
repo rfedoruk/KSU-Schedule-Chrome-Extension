@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Rate My Professor - KSU",
+  "version": "0.1",
+  "description": "See your professors score right in schedule builder.",
+  "content_scripts":[
+    {
+      "matches": [
+        "https://kennesaw.collegescheduler.com/*"
+      ],
+      "js": ["jquery-3.6.0.min.js", "content.js"]
+    }
+  ],
+  "action": {
+    "default_icon": { "16": "16.png",
+           "48": "48.png",
+          "128": "128.png" }
+  },
+  "permissions": ["storage", "activeTab", "declarativeContent", "tabs"],
+  "web_accessible_resources": [{
+    "resources": ["listOfNames.json"],
+    "matches": ["<all_urls>"]
+  }],
+  "icons": {
+    "16": "16.png",
+    "48": "48.png",
+    "128": "128.png"
+  }
+}
